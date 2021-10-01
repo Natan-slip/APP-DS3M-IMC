@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DashBoardActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/header_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_foto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/hansolo"
+                android:scaleType="centerCrop"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Han Solo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_foto" />
+
+        <TextView
+            android:id="@+id/tv_profile_occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Designer Gráfico"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@+id/tv_profile_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_profile_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_name" />
+
+        <TextView
+            android:id="@+id/tv_imc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/roboto"
+            android:text="25.8"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_ncd"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_occupation" />
+
+        <TextView
+            android:id="@+id/tv_ncd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="2180"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_age"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_imc"
+            app:layout_constraintTop_toTopOf="@+id/tv_imc" />
+
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="28"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_weight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_ncd"
+            app:layout_constraintTop_toTopOf="@+id/tv_ncd" />
+
+        <TextView
+            android:id="@+id/tv_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="58"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_age"
+            app:layout_constraintTop_toTopOf="@+id/tv_age" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="IMC"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@+id/tv_imc"
+            app:layout_constraintStart_toStartOf="@+id/tv_imc"
+            app:layout_constraintTop_toBottomOf="@+id/tv_imc" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="NCD"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_ncd"
+            app:layout_constraintStart_toStartOf="@+id/tv_ncd"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ncd" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Idade"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_age"
+            app:layout_constraintStart_toStartOf="@+id/tv_age"
+            app:layout_constraintTop_toBottomOf="@+id/tv_age" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Peso"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@+id/tv_weight"
+            app:layout_constraintStart_toStartOf="@+id/tv_weight"
+            app:layout_constraintTop_toBottomOf="@+id/tv_weight" />
+
+        <TextView
+            android:id="@+id/tv_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="end|center_vertical"
+            android:text="Sair"
+            android:drawableTint="@android:color/white"
+            android:drawablePadding="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_weight"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/card_history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_pesar_agora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bmi" />
+
+            <TextView
+                android:id="@+id/tv_pesar_agora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto"
+                android:text="Pesar agora"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/iv_pesar_agora"
+                app:layout_constraintTop_toTopOf="@+id/iv_pesar_agora" />
+
+            <TextView
+                android:id="@+id/tv_acompanhe_peso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/roboto"
+                android:text="Acompanhe o seu peso"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_pesar_agora"
+                app:layout_constraintStart_toStartOf="@+id/tv_pesar_agora" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_history"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_weight">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_history"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/statistics" />
+
+            <TextView
+                android:id="@+id/tv_ver_historico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto"
+                android:text="Ver histórico"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/iv_history"
+                app:layout_constraintTop_toTopOf="@+id/iv_history" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Reveja suas conquistas"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_history"
+                app:layout_constraintStart_toStartOf="@+id/tv_ver_historico" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
