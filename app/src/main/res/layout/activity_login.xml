@@ -11,27 +11,27 @@
         android:id="@+id/rel_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@color/colorPrimaryDark">
 
         <TextView
             android:id="@+id/tv_titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:fontFamily="@font/paytone_one"
-            android:gravity="end"
             android:text="Health\nCalc"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp" />
+            android:textColor="@android:color/white"
+            android:textSize="32sp"
+            android:gravity="end"
+            android:layout_alignParentStart="true"/>
 
         <ImageView
             android:id="@+id/iv_logo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/peso_imc" />
+            android:src="@drawable/peso_imc"
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
 
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/ic_wave"
-        android:layout_below="@id/rel_head"/>
+        android:layout_below="@id/rel_head" />
 
     <TextView
         android:id="@+id/tv_login"
@@ -49,7 +49,8 @@
         android:text="Login"
         android:layout_below="@id/view_wave"
         android:textSize="32sp"
-        android:layout_marginStart="32dp"/>
+        android:layout_marginStart="32dp"
+        android:textColor="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/tv_faca_login"
@@ -57,7 +58,8 @@
         android:layout_height="wrap_content"
         android:text="Faça login para continuar"
         android:layout_below="@id/tv_login"
-        android:layout_marginStart="32dp"/>
+        android:layout_marginStart="32dp"
+        android:textColor="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/tv_mensagem_erro"
@@ -79,7 +81,7 @@
         android:padding="16dp"
         android:hint="E-mail"
         android:drawableStart="@drawable/ic_email_24"
-        android:drawableTint="@color/colorAccent"
+        android:drawableTint="@color/colorPrimaryDark"
         android:drawablePadding="16dp"
         android:inputType="textEmailAddress"
         android:maxLines="1"/>
@@ -97,7 +99,7 @@
         android:padding="16dp"
         android:hint="Senha"
         android:drawableStart="@drawable/ic_lock_24"
-        android:drawableTint="@color/colorAccent"
+        android:drawableTint="@color/colorPrimaryDark"
         android:drawablePadding="16dp"
         />
 
@@ -130,12 +132,12 @@
         android:id="@+id/tv_esqueceu_senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Esqueceu a senha?"
         android:layout_below="@id/check_lembrar"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:text="Esqueceu a senha?"
-        android:textColor="@color/colorPrimary" />
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/holo_blue_dark"/>
 
     <TextView
         android:id="@+id/tv_novo_por_aqui"
@@ -150,29 +152,30 @@
         android:id="@+id/tv_crie_sua_conta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Crie sua conta"
         android:layout_below="@id/tv_esqueceu_senha"
-        android:layout_alignParentEnd="true"
         android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="Crie sua conta"
-        android:textColor="@color/colorPrimary" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/holo_blue_dark"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@drawable/ic_wave_reverse"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/colorPrimaryDark"/>
 
     <TextView
         android:id="@+id/tv_rodape"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Desenvolvido por DS3M"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
-        android:text="Desenvolvido por DS2M-A"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@android:color/white"/>
 
 
 </RelativeLayout>

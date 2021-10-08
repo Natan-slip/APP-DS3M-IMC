@@ -2,6 +2,8 @@ package br.senai.sp.jandira.imcapp20_a.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.SeekBar
 import android.widget.Toast
@@ -18,6 +20,12 @@ class BiometriaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_biometria)
 
+        supportActionBar!!.title = " Novo usuário"
+        supportActionBar!!.subtitle = " Cadastre o seus dados"
+        supportActionBar!!.setBackgroundDrawable(getDrawable(R.drawable.toolbar))
+        supportActionBar!!.elevation = 0.0f
+
+
         val id = intent.getIntExtra("id_usuario", 0)
 
         tv_nivel_atividade.text = "0 - Nenhuma atividade"
@@ -31,9 +39,7 @@ class BiometriaActivity : AppCompatActivity() {
 
         edit_text_data_pesagem.setText(hoje)
 
-        button_salvar_biometria.setOnClickListener {
-            salvarBiometria(id)
-        }
+
 
         seek_atividades.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
@@ -77,5 +83,32 @@ class BiometriaActivity : AppCompatActivity() {
 
         finish()
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_novo_usuario,menu)
+        return true
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        when (item.itemId) {
+            R.id.menu_save -> {
+                Toast.makeText(this,"Salvar",Toast.LENGTH_LONG).show()
+                salvarBiometria(id = 0)
+                return true
+            }
+            R.id.menu_cancel -> {
+                Toast.makeText(this,"Cancelar",Toast.LENGTH_LONG).show()
+                return true
+            }
+            R.id.menu_help ->{
+                Toast.makeText(this,"Ajuda",Toast.LENGTH_LONG).show()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

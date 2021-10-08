@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
@@ -16,7 +17,6 @@ import br.senai.sp.jandira.imcapp20_a.R
 import br.senai.sp.jandira.imcapp20_a.dao.UsuarioDao
 import br.senai.sp.jandira.imcapp20_a.model.Usuario
 import kotlinx.android.synthetic.main.activity_novo_usuario.*
-import org.jetbrains.anko.toast
 import java.util.*
 
 const val CODE_IMAGE = 100
@@ -30,14 +30,13 @@ class NovoUsuarioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_novo_usuario)
 
-        supportActionBar!!.title = "Novo usuário"
-        supportActionBar!!.subtitle = "cadastre os seus dados"
-        supportActionBar!!.setBackgroundDrawable(getDrawable(R.drawable.tool_bar_background))
-
-        supportActionBar!!.elevation = 0.0f
-
         imgProfile = findViewById(R.id.img_profile)
 
+
+        supportActionBar!!.title = " Novo usuário"
+        supportActionBar!!.subtitle = " Cadastre o seus dados"
+        supportActionBar!!.setBackgroundDrawable(getDrawable(R.drawable.toolbar))
+        supportActionBar!!.elevation = 0.0f
         // Detectar o click no texto "Trocar foto"
         tv_trocar_foto.setOnClickListener {
             abrirGaleria()
@@ -51,7 +50,8 @@ class NovoUsuarioActivity : AppCompatActivity() {
 
         // Abrir um componente DatePickerDialog
         et_data_nascimento.setOnClickListener {
-            val dpd = DatePickerDialog(this,
+            val dpd = DatePickerDialog(
+                this,
                 DatePickerDialog.OnDateSetListener { view, _ano, _mes, _dia ->
                     var diaZero = "$_dia"
                     var mesZero = "$_mes"
@@ -67,34 +67,7 @@ class NovoUsuarioActivity : AppCompatActivity() {
                 }, ano, mes, dia
             )
             dpd.show()
-
         }
-
-        bt_gravar.setOnClickListener {
-            // *** Criar o sharedPreferences
-//            val dados = getSharedPreferences("dados_usuario", Context.MODE_PRIVATE)
-//
-//            val editor = dados.edit()
-//            editor.putString("nome", et_nome.text.toString())
-//            editor.putString("profissao", et_profissao.text.toString())
-//            editor.putInt("peso", et_peso.text.toString().toInt())
-//            editor.putInt("idade", et_data_nascimento.text.toString().toInt())
-//            editor.putString("email", et_email.text.toString())
-//            editor.putString("senha", et_senha.text.toString())
-//            editor.apply()
-
-            // Gravar o novo usuário no banco de dados SQLite
-
-            salvar()
-        }
-
-    }
-
-    //Inflando o menu ao ser carregado
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater;
-        inflater.inflate(R.menu.menu_nono_usuario, menu)
-        return true;
     }
 
 
@@ -108,38 +81,47 @@ class NovoUsuarioActivity : AppCompatActivity() {
             et_profissao.text.toString(),
             et_altura.text.toString().toDouble(),
             et_data_nascimento.text.toString(),
-            if (radio_feminino.isChecked) 'F' else 'M',
+            if(radio_feminino.isChecked) 'F' else 'M',
             imageBitmap
+
         )
 
         val dao = UsuarioDao(this, usuario)
         dao.gravar()
 
         Toast.makeText(this, "Dados gravados com sucesso!!", Toast.LENGTH_SHORT).show()
+
         finish()
     }
 
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_novo_usuario,menu)
+        return true
+    }
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId){
+        // Handle item selection
+        when (item.itemId) {
             R.id.menu_save -> {
+                Toast.makeText(this,"Salvar",Toast.LENGTH_LONG).show()
                 salvar()
-
-                Toast.makeText(this, "Salvar", Toast.LENGTH_SHORT)
-
                 return true
             }
-            R.id.menu_cancelar -> {
-                Toast.makeText(this, "Cancelar", Toast.LENGTH_SHORT)
+            R.id.menu_cancel -> {
+                Toast.makeText(this,"Cancelar",Toast.LENGTH_LONG).show()
                 return true
             }
-            R.id.menu_help -> {
-                Toast.makeText(this, "Ajudar", Toast.LENGTH_SHORT)
+            R.id.menu_help ->{
+                Toast.makeText(this,"Ajuda",Toast.LENGTH_LONG).show()
                 return true
             }
         }
-
         return super.onOptionsItemSelected(item)
     }
+
 
     private fun abrirGaleria() {
 
@@ -160,8 +142,6 @@ class NovoUsuarioActivity : AppCompatActivity() {
         )
 
     }
-
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

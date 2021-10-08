@@ -24,7 +24,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/text_fazer_hoje"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#9C27B0" />
+        android:textColor="@color/colorPrimaryDark" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginEnd="8dp"
-            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardBackgroundColor="@color/colorAccent"
             app:cardCornerRadius="16dp"
             app:contentPadding="8dp">
 
@@ -71,7 +71,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginStart="8dp"
-            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardBackgroundColor="@color/colorAccent"
             app:cardCornerRadius="16dp"
             app:contentPadding="8dp">
 

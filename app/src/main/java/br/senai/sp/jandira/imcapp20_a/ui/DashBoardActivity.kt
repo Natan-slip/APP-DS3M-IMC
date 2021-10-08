@@ -27,6 +27,8 @@ class DashBoardActivity : AppCompatActivity() {
 
         preencherDashBoard()
 
+        supportActionBar!!.hide()
+
         tv_logout.setOnClickListener {
             val dados = getSharedPreferences("dados_usuario", Context.MODE_PRIVATE)
             val editor = dados.edit()
@@ -53,7 +55,7 @@ class DashBoardActivity : AppCompatActivity() {
     private fun criarAlertDialog() {
         val dialog = AlertDialog.Builder(this)
 
-        dialog.setMessage("\nVocê ainda não concluiu o seu cadastro. Vamos fazer isso agora?\n")
+        dialog.setMessage("Você não terminou seu cadastro, deseja terminar ?")
             .setCancelable(false)
             .setPositiveButton("Sim", DialogInterface.OnClickListener { dialog, which ->
                 atualizarBio()
@@ -78,6 +80,7 @@ class DashBoardActivity : AppCompatActivity() {
         idade = dados.getString("idade", "")!!
         altura = dados.getFloat("altura", 0.0f).toDouble()
 
+
         tv_profile_name.text = nome
         tv_profile_occupation.text = profissao
         tv_weight.text = peso.toString()
@@ -95,7 +98,7 @@ class DashBoardActivity : AppCompatActivity() {
         }
 
         tv_imc.text = String.format("%.1f", calcularImc(peso.toDouble(), altura))
-        tv_ncd.text= String.format("%.2f", calcularNcd(peso = 0.0, faixaEtaria = 0, nivelAtividade = 0, sexo = 0.toChar()))
+        tv_ncd.text = String.format("%.1f", calcularNcd(peso.toDouble(),faixaEtaria = 1,nivelAtividade = 0,sexo = 0.toChar()))
 
     }
 

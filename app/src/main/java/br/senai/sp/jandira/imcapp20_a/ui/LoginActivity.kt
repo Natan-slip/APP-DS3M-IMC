@@ -25,12 +25,18 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        //Remover a appBar
+//
+//        supportActionBar!!.title =" Novo usuário"
+//        supportActionBar!!.subtitle =" Cadastre o seus dados"
         supportActionBar!!.hide()
+//
+//        supportActionBar!!.setBackgroundDrawable(getDrawable(R.drawable.toolbar))
+//        supportActionBar!!.elevation = 0.0f
 
         // **** TESTAR O MÉTODO obterDiferencaEntreDatasEmAnos
         obterDiferencaEntreDatasEmAnos("10/10/1996")
         obterDiferencaEntreDatasEmAnos("03/08/1990")
+
 
 
         val dados = getSharedPreferences("dados_usuario", Context.MODE_PRIVATE)

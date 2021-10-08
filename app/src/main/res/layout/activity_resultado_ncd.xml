@@ -31,11 +31,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Resultado"
-                    android:layout_marginTop="48dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="48dp"
+                    android:text="Resultado"
                     android:textAppearance="@style/text_title"
-                    android:textSize="24sp"/>
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="180dp"
@@ -65,9 +66,9 @@
                             android:layout_height="wrap_content"
                             android:text="Kcal"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="28sp"
-                            android:textColor="@android:color/holo_orange_light"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 

@@ -12,8 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.BiometriaActivity"></activity>
-        <activity android:name=".ui.NovoUsuarioActivity"
-            android:parentActivityName=".ui.LoginActivity"/>
+        <activity android:name=".ui.NovoUsuarioActivity" />
         <activity android:name=".ui.DashBoardActivity" />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
